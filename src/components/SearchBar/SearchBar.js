@@ -1,34 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
+import { SearchContext } from "../../context/SearchContext.js";
 import "./SearchBar.scss";
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
+const SearchBar = () => {
+  const [input, setInput] = useState("");
+  const { handleSearch } = useContext(SearchContext);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSearch(query);
+  useEffect(() => {
+    // Debounce function
+    const timeoutId = setTimeout(() => {
+      handleSearch(input);
+    }, 300); // 300ms delay
+
+    // Cleanup function
+    return () => clearTimeout(timeoutId);
+  }, [input, handleSearch]);
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
   };
 
   return (
     <div className="search-bar">
-      <form className="search-bar__form" onSubmit={handleSubmit}>
+      <div className="search-bar__container">
         <input
           className="search-bar__input"
           type="text"
           placeholder="Buscar producto"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          value={input}
+          onChange={handleInputChange}
           aria-label="Buscar producto"
         />
-        <button
-          className="search-bar__button"
-          type="submit"
-          aria-label="Buscar"
-        >
-          <SearchIcon className="search-bar__icon" />
-        </button>
-      </form>
+        <SearchIcon className="search-bar__icon" aria-hidden="true" />
+      </div>
     </div>
   );
 };

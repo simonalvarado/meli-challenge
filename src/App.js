@@ -1,16 +1,19 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import ItemList from "./components/ItemList/ItemList";
+import Header from "./components/Header/Header.js";
+import ItemList from "./components/ItemList/ItemList.js";
+import { SearchProvider } from "./context/SearchContext.js";
 import "./App.scss";
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <main className="app__main">
-        <ItemList />
-      </main>
-    </div>
+    <SearchProvider>
+      <div className="app">
+        <Header />
+        <main className="app__main">
+          <ItemList />
+        </main>
+      </div>
+    </SearchProvider>
   );
 }
 

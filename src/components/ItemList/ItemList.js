@@ -1,48 +1,102 @@
-import React, { useState, useEffect } from "react";
-import { fetchItems } from "../../services/dataService";
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  useContext,
+} from "react";
+import { fetchItems } from "../../services/dataService.js";
+import { SearchContext } from "../../context/SearchContext.js";
 import "./ItemList.scss";
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
+  const [perPage] = useState(10);
   const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const { searchQuery } = useContext(SearchContext);
+
+  const observer = useRef();
+  
+  const lastItemElementRef = useCallback(
+    (node) => {
+      if (isLoading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage((prevPage) => prevPage + 1);
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [isLoading, hasMore]
+  );
+
+  const loadItems = useCallback(
+    async (currentPage, resetItems = false) => {
+      if (isLoading) return;
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const newItems = await fetchItems({
+          page: currentPage,
+          perPage,
+          query: searchQuery,
+        });
+        console.log("query:", searchQuery, "page:", currentPage);
+
+        if (newItems.length < perPage) {
+          setHasMore(false);
+        } else {
+          setHasMore(true);
+        }
+
+        setItems((prevItems) =>
+          resetItems ? newItems : [...prevItems, ...newItems]
+        );
+      } catch (error) {
+        setError("Failed to load items. Please try again later.");
+        console.error("Error loading items:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [perPage, searchQuery]
+  );
 
   useEffect(() => {
-    const loadInitialItems = async () => {
-      const newItems = await fetchItems(page); // Usa el page inicial
-      setItems(newItems);
-    };
+    setPage(1);
+    setItems([]);
+    loadItems(1, true);
+  }, [searchQuery, loadItems]);
 
-    loadInitialItems();
-  }, []);
-
-  const loadItems = async () => {
-    if (!hasMore) return;
-
-    try {
-      const nextPage = page + 1;
-      const newItems = await fetchItems(nextPage);
-
-      if (newItems.length < 10) {
-        setHasMore(false);
-      }
-
-      setPage(nextPage);
-      setItems((prevItems) => [...prevItems, ...newItems]); 
-    } catch (error) {
-      console.error("Error loading items:", error);
+  useEffect(() => {
+    if (page > 1) {
+      loadItems(page);
     }
-  };
+  }, [page, loadItems]);
 
   return (
     <div className="item-list">
       <h1>Item List</h1>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.title}</li>
+        {items.map((item, index) => (
+          <li
+            key={item.id}
+            ref={index === items.length - 1 ? lastItemElementRef : null}
+            className="item-list__item"
+          >
+            {item.title}
+          </li>
         ))}
       </ul>
-      {hasMore && <button onClick={loadItems}>Cargar Mas</button>}
+      {isLoading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+      {!hasMore && items.length > 0 && <p>No more items to load</p>}
     </div>
   );
 };
