@@ -1,12 +1,8 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useRef,
-  useContext,
-} from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import { fetchItems } from "../../services/dataService.js";
 import { SearchContext } from "../../context/SearchContext.js";
+import Card from "../Card/Card.js";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver.js";
 import "./ItemList.scss";
 
 const ItemList = () => {
@@ -18,22 +14,6 @@ const ItemList = () => {
   const [error, setError] = useState(null);
 
   const { searchQuery } = useContext(SearchContext);
-
-  const observer = useRef();
-  
-  const lastItemElementRef = useCallback(
-    (node) => {
-      if (isLoading) return;
-      if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          setPage((prevPage) => prevPage + 1);
-        }
-      });
-      if (node) observer.current.observe(node);
-    },
-    [isLoading, hasMore]
-  );
 
   const loadItems = useCallback(
     async (currentPage, resetItems = false) => {
@@ -68,6 +48,12 @@ const ItemList = () => {
     [perPage, searchQuery]
   );
 
+  const loadMore = useCallback(() => {
+    setPage((prevPage) => prevPage + 1);
+  }, []);
+
+  const lastItemRef = useIntersectionObserver(isLoading, hasMore, loadMore);
+
   useEffect(() => {
     setPage(1);
     setItems([]);
@@ -82,21 +68,17 @@ const ItemList = () => {
 
   return (
     <div className="item-list">
-      <h1>Item List</h1>
       <ul>
         {items.map((item, index) => (
-          <li
+          <Card
             key={item.id}
-            ref={index === items.length - 1 ? lastItemElementRef : null}
-            className="item-list__item"
-          >
-            {item.title}
-          </li>
+            item={item}
+            ref={index === items.length - 1 ? lastItemRef : null}
+          />
         ))}
       </ul>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-      {!hasMore && items.length > 0 && <p>No more items to load</p>}
     </div>
   );
 };

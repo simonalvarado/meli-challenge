@@ -1,10 +1,6 @@
 @import "../../styles/variables.scss";
 
 .item-list {
-    &__item {
-        padding: 100px 0;
-        border: 1px solid red;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
+    max-width: $page-max-width;
+    margin: 0 auto;
 }

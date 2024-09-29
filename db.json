@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "iPhone 12 Pro",
-      "image": "https://example.com/iphone12pro.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Apple iPhone 12 Pro con 5G, pantalla Super Retina XDR de 6.1 pulgadas",
       "detail": {
         "info": "El iPhone 12 Pro tiene un nuevo diseño elegante con bordes planos y un acabado de acero inoxidable prémium.",
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "title": "Samsung Galaxy S21",
-      "image": "https://example.com/galaxys21.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Samsung Galaxy S21 5G con pantalla Dynamic AMOLED 2X de 6.2 pulgadas",
       "detail": {
         "info": "El Galaxy S21 5G ofrece un rendimiento épico con su potente procesador y cámara de grado profesional.",
@@ -25,7 +25,7 @@
     {
       "id": 3,
       "title": "Google Pixel 6",
-      "image": "https://example.com/pixel6.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Google Pixel 6 con pantalla OLED de 6.4 pulgadas",
       "detail": {
         "info": "El Pixel 6 ofrece una experiencia de usuario excepcional con su cámara de grado profesional y su potente procesador.",
@@ -36,7 +36,7 @@
     {
       "id": 4,
       "title": "iPhone 16",
-      "image": "https://example.com/iphone16.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Apple iPhone 16 con 5G, pantalla Super Retina XDR de 6.1 pulgadas",
       "detail": {
         "info": "El iPhone 16 ofrece un rendimiento excepcional con el chip A18 Bionic y una cámara mejorada.",
@@ -47,7 +47,7 @@
     {
       "id": 5,
       "title": "iPhone 16 Pro",
-      "image": "https://example.com/iphone16pro.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Apple iPhone 16 Pro con 5G, pantalla ProMotion de 6.7 pulgadas",
       "detail": {
         "info": "El iPhone 16 Pro presenta un sistema de cámara pro avanzado y el potente chip A18 Pro.",
@@ -58,7 +58,7 @@
     {
       "id": 6,
       "title": "iPhone 15",
-      "image": "https://example.com/iphone15.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Apple iPhone 15 con 5G, pantalla Super Retina XDR de 6.1 pulgadas",
       "detail": {
         "info": "El iPhone 15 combina un diseño elegante con el potente chip A17 Bionic.",
@@ -69,7 +69,7 @@
     {
       "id": 7,
       "title": "iPhone 15 Pro Max",
-      "image": "https://example.com/iphone15promax.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Apple iPhone 15 Pro Max con 5G, pantalla ProMotion de 6.7 pulgadas",
       "detail": {
         "info": "El iPhone 15 Pro Max ofrece la experiencia iPhone más avanzada con cámara profesional y chip A17 Pro.",
@@ -80,7 +80,7 @@
     {
       "id": 8,
       "title": "Google Pixel 7",
-      "image": "https://example.com/pixel7.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Google Pixel 7 con pantalla OLED de 6.3 pulgadas",
       "detail": {
         "info": "El Pixel 7 ofrece fotografía computacional avanzada y el chip Google Tensor G2.",
@@ -91,7 +91,7 @@
     {
       "id": 9,
       "title": "Google Pixel 7 Pro",
-      "image": "https://example.com/pixel7pro.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Google Pixel 7 Pro con pantalla LTPO OLED de 6.7 pulgadas",
       "detail": {
         "info": "El Pixel 7 Pro es el teléfono Google más avanzado con una cámara versátil y potente rendimiento.",
@@ -102,7 +102,7 @@
     {
       "id": 10,
       "title": "Google Pixel 6a",
-      "image": "https://example.com/pixel6a.jpg",
+      "image": "/assets/placeholder.webp",
       "description": "Google Pixel 6a con pantalla OLED de 6.1 pulgadas",
       "detail": {
         "info": "El Pixel 6a ofrece un rendimiento excepcional a un precio accesible.",
@@ -113,7 +113,7 @@
     {
     "id": 11,
     "title": "Item 11",
-    "image": "https://example.com/galaxyzfold4.jpg",
+    "image": "/assets/placeholder.webp",
     "description": "Samsung Galaxy Z Fold 4 con pantalla plegable Dynamic AMOLED 2X de 7.6 pulgadas",
     "detail": {
         "info": "El Galaxy Z Fold 4 redefine la experiencia móvil con su innovadora pantalla plegable y su potente rendimiento multitarea.",

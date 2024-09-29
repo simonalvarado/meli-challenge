@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.card {
+  list-style: none;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    border-bottom: 1px solid $border-primary-color;
+  }
+
+  &__image-wrapper {
+    max-width: 144px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+}
