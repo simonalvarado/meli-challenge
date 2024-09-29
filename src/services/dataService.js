@@ -1,7 +1,7 @@
 // src/services/dataService.js
 const BASE_URL = "http://localhost:5001";
 
-export const fetchItems = async (page = 2) => {
+export const fetchItems = async (page = 1) => {
   try {
     const response = await fetch(`${BASE_URL}/items?_page=${page}`);
     if (!response.ok) {
@@ -15,4 +15,3 @@ export const fetchItems = async (page = 2) => {
     throw error;
   }
 };
-
