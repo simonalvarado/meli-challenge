@@ -1,19 +1,41 @@
 @import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
 
 .item-list {
     max-width: $page-max-width;
     margin: 0 auto;
+
+    @include for-tablet-up {
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr) 3fr; // Ajustado aquí
+        gap: 1rem;
+    }   
 
     &__header {
         display: flex;
         background-color: $background-secondary-color;
         box-shadow: 0 1px 2px 0 rgba(17,17,17,.15);
         margin-bottom: 1rem;
+
+        @include for-tablet-up {
+            box-shadow: none;
+        }
     }
 
     &__title {
         margin: 1rem 0;
         padding: 0 1rem;
         font-size: 1rem;
+
+        @include for-tablet-up {
+            font-size: 1.5rem;
+            padding: 0 0 0 1rem;
+        }
+    }
+
+    &__container {
+        @include for-tablet-up {
+            margin-top: 1rem;
+        }
     }
 }
