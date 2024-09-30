@@ -8,8 +8,8 @@
 }
 
 body {
-  font-family: $font-primary-family;
-  color: $font-primary-color;
+  font-family: $text-primary-family;
+  color: $text-primary-color;
 
   &.modal-open {
     overflow: hidden;

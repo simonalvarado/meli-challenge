@@ -111,15 +111,169 @@
       }
     },
     {
-    "id": 11,
-    "title": "Samsung Galaxy Z Fold 4",
-    "image": "/assets/placeholder.webp",
-    "description": "Samsung Galaxy Z Fold 4 con pantalla plegable Dynamic AMOLED 2X de 7.6 pulgadas",
-    "detail": {
+      "id": 11,
+      "title": "Samsung Galaxy Z Fold 4",
+      "image": "/assets/placeholder.webp",
+      "description": "Samsung Galaxy Z Fold 4 con pantalla plegable Dynamic AMOLED 2X de 7.6 pulgadas",
+      "detail": {
         "info": "El Galaxy Z Fold 4 redefine la experiencia móvil con su innovadora pantalla plegable y su potente rendimiento multitarea.",
         "price": "$1799",
         "address": "Samsung Store, 1234 Market Street, Philadelphia, PA 19107"
-    }
+      }
+    },
+    {
+      "id": 12,
+      "title": "OnePlus 9 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "OnePlus 9 Pro con pantalla Fluid AMOLED de 6.7 pulgadas",
+      "detail": {
+        "info": "El OnePlus 9 Pro cuenta con carga rápida inalámbrica y un sistema de cámaras co-desarrollado con Hasselblad.",
+        "price": "$969",
+        "address": "OnePlus Store, 548 Market St, San Francisco, CA 94104"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Xiaomi Mi 11",
+      "image": "/assets/placeholder.webp",
+      "description": "Xiaomi Mi 11 con pantalla AMOLED de 6.81 pulgadas",
+      "detail": {
+        "info": "El Xiaomi Mi 11 ofrece una experiencia visual impresionante con su pantalla AMOLED de alta resolución y su potente Snapdragon 888.",
+        "price": "$749",
+        "address": "Xiaomi Store, 67 Wall Street, New York, NY 10005"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Sony Xperia 1 III",
+      "image": "/assets/placeholder.webp",
+      "description": "Sony Xperia 1 III con pantalla OLED 4K de 6.5 pulgadas",
+      "detail": {
+        "info": "El Xperia 1 III ofrece una experiencia de cine en la palma de tu mano, con tecnología de pantalla y cámaras avanzadas de Sony.",
+        "price": "$1299",
+        "address": "Sony Store, 550 Madison Ave, New York, NY 10022"
+      }
+    },
+    {
+      "id": 15,
+      "title": "Oppo Find X3 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "Oppo Find X3 Pro con pantalla AMOLED de 6.7 pulgadas",
+      "detail": {
+        "info": "El Oppo Find X3 Pro cuenta con una pantalla impresionante y capacidades de fotografía microscópica.",
+        "price": "$1149",
+        "address": "Oppo Store, 123 3rd St, Los Angeles, CA 90013"
+      }
+    },
+    {
+      "id": 16,
+      "title": "Huawei P50 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "Huawei P50 Pro con pantalla OLED de 6.6 pulgadas",
+      "detail": {
+        "info": "El Huawei P50 Pro ofrece un sistema de cámaras Leica mejorado y un rendimiento potente.",
+        "price": "$999",
+        "address": "Huawei Store, 825 Market St, San Francisco, CA 94103"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Motorola Edge 30 Ultra",
+      "image": "/assets/placeholder.webp",
+      "description": "Motorola Edge 30 Ultra con pantalla OLED de 6.67 pulgadas",
+      "detail": {
+        "info": "El Edge 30 Ultra cuenta con una cámara de 200MP y un diseño elegante.",
+        "price": "$899",
+        "address": "Motorola Store, 876 Michigan Ave, Chicago, IL 60611"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Xiaomi Redmi Note 11 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "Xiaomi Redmi Note 11 Pro con pantalla AMOLED de 6.67 pulgadas",
+      "detail": {
+        "info": "El Redmi Note 11 Pro ofrece un excelente equilibrio entre precio y rendimiento.",
+        "price": "$329",
+        "address": "Xiaomi Store, 101 5th Ave, New York, NY 10003"
+      }
+    },
+    {
+      "id": 19,
+      "title": "Sony Xperia 5 IV",
+      "image": "/assets/placeholder.webp",
+      "description": "Sony Xperia 5 IV con pantalla OLED de 6.1 pulgadas",
+      "detail": {
+        "info": "El Xperia 5 IV ofrece una experiencia multimedia inmersiva con su pantalla OLED y sonido Hi-Res.",
+        "price": "$999",
+        "address": "Sony Store, 678 Broadway, New York, NY 10012"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Vivo X80 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "Vivo X80 Pro con pantalla AMOLED de 6.78 pulgadas",
+      "detail": {
+        "info": "El Vivo X80 Pro destaca por su cámara de calidad profesional y diseño premium.",
+        "price": "$1199",
+        "address": "Vivo Store, 1200 4th St, Miami, FL 33139"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Realme GT 2 Pro",
+      "image": "/assets/placeholder.webp",
+      "description": "Realme GT 2 Pro con pantalla LTPO AMOLED de 6.7 pulgadas",
+      "detail": {
+        "info": "El GT 2 Pro ofrece un rendimiento impresionante y una pantalla de alta tasa de refresco.",
+        "price": "$749",
+        "address": "Realme Store, 231 Battery St, San Francisco, CA 94111"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Asus ROG Phone 6",
+      "image": "/assets/placeholder.webp",
+      "description": "Asus ROG Phone 6 con pantalla AMOLED de 6.78 pulgadas",
+      "detail": {
+        "info": "El ROG Phone 6 está diseñado para gamers, con un rendimiento superior y características avanzadas para juegos.",
+        "price": "$999",
+        "address": "Asus Store, 145 8th Ave, New York, NY 10011"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Nokia G50",
+      "image": "/assets/placeholder.webp",
+      "description": "Nokia G50 con pantalla LCD de 6.82 pulgadas",
+      "detail": {
+        "info": "El Nokia G50 es un teléfono accesible con 5G y batería de larga duración.",
+        "price": "$299",
+        "address": "Nokia Store, 456 Main St, Boston, MA 02129"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Samsung Galaxy A53",
+      "image": "/assets/placeholder.webp",
+      "description": "Samsung Galaxy A53 con pantalla Super AMOLED de 6.5 pulgadas",
+      "detail": {
+        "info": "El Galaxy A53 ofrece una excelente relación calidad-precio con una pantalla vibrante y buena autonomía.",
+        "price": "$449",
+        "address": "Samsung Store, 345 Market St, San Francisco, CA 94104"
+      }
+    },
+    {
+      "id": 25,
+      "title": "OnePlus Nord 2",
+      "image": "/assets/placeholder.webp",
+      "description": "OnePlus Nord 2 con pantalla AMOLED de 6.43 pulgadas",
+      "detail": {
+        "info": "El OnePlus Nord 2 ofrece un rendimiento sólido y carga rápida a un precio competitivo.",
+        "price": "$499",
+        "address": "OnePlus Store, 567 3rd Ave, Los Angeles, CA 90014"
+      }
     }
   ]
 }

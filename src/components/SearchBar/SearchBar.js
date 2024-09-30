@@ -8,12 +8,10 @@ const SearchBar = () => {
   const { handleSearch } = useContext(SearchContext);
 
   useEffect(() => {
-    // Debounce function
     const timeoutId = setTimeout(() => {
       handleSearch(input);
-    }, 300); // 300ms delay
+    }, 300);
 
-    // Cleanup function
     return () => clearTimeout(timeoutId);
   }, [input, handleSearch]);
 

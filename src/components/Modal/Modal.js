@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Spinner from "../Spinner/Spinner.js";
 import "./Modal.scss";
 
 const Modal = ({ isOpen, onClose, item }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("modal-open");
+      setImageLoaded(false); // Reset image loaded state when modal opens
     } else {
       document.body.classList.remove("modal-open");
     }
 
-    // Cleanup function to remove the class when the component unmounts
     return () => {
       document.body.classList.remove("modal-open");
     };
@@ -24,7 +27,13 @@ const Modal = ({ isOpen, onClose, item }) => {
           &times;
         </button>
         <div className="modal__image-wrapper">
-          <img src={item.image} alt={item.title} className="modal__image" />
+          {!imageLoaded && <Spinner />}
+          <img
+            src={item.image}
+            alt={item.title}
+            className={`modal__image ${imageLoaded ? "modal__image--loaded" : ""}`}
+            onLoad={() => setImageLoaded(true)}
+          />
         </div>
         <div className="modal__content">
           <h1 className="modal__title">{item.title}</h1>

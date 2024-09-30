@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useContext } from "react";
 import { fetchItems } from "../../services/dataService.js";
 import { SearchContext } from "../../context/SearchContext.js";
 import Card from "../Card/Card.js";
+import Spinner from "../Spinner/Spinner.js";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver.js";
 import "./ItemList.scss";
 
@@ -28,8 +29,6 @@ const ItemList = () => {
           perPage: ITEMS_PER_PAGE,
           query: searchQuery,
         });
-        console.log("query:", searchQuery, "page:", currentPage);
-
         setHasMore(newItems.length === ITEMS_PER_PAGE);
         setItems((prevItems) =>
           resetItems ? newItems : [...prevItems, ...newItems]
@@ -68,18 +67,25 @@ const ItemList = () => {
         <h1 className="item-list__title">Teléfonos y celulares</h1>
       </div>
       <div className="item-list__container">
-        <ul>
-          {items.map((item, index) => (
-            <Card
-              key={item.id}
-              item={item}
-              ref={index === items.length - 1 ? lastItemRef : null}
-            />
-          ))}
-        </ul>
+        {isLoading && <Spinner />}
+        {error && <p className="item-list__error">{error}</p>}
+        {items.length > 0 && (
+          <ul className="item-list__items">
+            {items.map((item, index) => (
+              <Card
+                key={item.id}
+                item={item}
+                ref={index === items.length - 1 ? lastItemRef : null}
+              />
+            ))}
+          </ul>
+        )}
+        {!isLoading && items.length === 0 && (
+          <p className="item-list__no-results">
+            No se encontraron resultados para "{searchQuery}"
+          </p>
+        )}
       </div>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
     </div>
   );
 };

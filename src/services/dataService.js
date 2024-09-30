@@ -1,4 +1,3 @@
-// src/services/dataService.js
 const BASE_URL = "http://localhost:6001";
 
 export const fetchItems = async (params) => {
@@ -11,7 +10,6 @@ export const fetchItems = async (params) => {
       throw new Error("Failed to fetch items");
     }
     const data = await response.json();
-    console.log(data);
     return data.items;
   } catch (error) {
     console.error("Error fetching items:", error);

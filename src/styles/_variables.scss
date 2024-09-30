@@ -1,11 +1,11 @@
 // Fonts
-$font-primary-family: "Avenir", Helvetica, Arial, sans-serif;
+$text-primary-family: "Avenir", Helvetica, Arial, sans-serif;
 
 // Colors
-$font-primary-color: #2c3e50;
-$font-secondary-color: #0f1111;
+$text-primary-color: #2c3e50;
+$text-secondary-color: #0f1111;
 $header-background-color: #ffe600;
-$background-secondary-color: #fff;
+$background-primary-color: #fff;
 $search-bar-background-color: #f2f2f2;
 $search-bar-background-color-hover: #e4e4e4;
 $search-bar-background-color-focus: rgb(255, 255, 255);
@@ -15,5 +15,7 @@ $image-wrapper-background-color: #f8f8f8;
 $button-primary-color: #ffe600;
 $button-border-color: #f6dd00;
 $button-background-color-hover: #f4db00;
+$error-color: #ff0000;
+
 // Sizes
 $page-max-width: 1200px;
