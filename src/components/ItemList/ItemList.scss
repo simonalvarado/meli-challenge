@@ -47,7 +47,7 @@
     &__no-results {
         color: $text-secondary-color;
         text-align: center;
-        line-break: anywhere;
+        word-break: break-word;
         margin: 0 1rem;
 
         @include for-tablet-up {
