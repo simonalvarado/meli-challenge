@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ReactComponent as SearchIcon } from "../../assets/search-icon.svg";
+import { ReactComponent as ClearIcon } from "../../assets/x-icon.svg";
 import { SearchContext } from "../../context/SearchContext.js";
 import "./SearchBar.scss";
 
@@ -19,9 +20,17 @@ const SearchBar = () => {
     setInput(e.target.value);
   };
 
+  const handleClearInput = () => {
+    setInput("");
+  };
+
   return (
     <div className="search-bar">
       <div className="search-bar__container">
+        <SearchIcon
+          className="search-bar__icon search-bar__icon--search"
+          aria-hidden="true"
+        />
         <input
           className="search-bar__input"
           type="text"
@@ -30,7 +39,18 @@ const SearchBar = () => {
           onChange={handleInputChange}
           aria-label="Buscar producto"
         />
-        <SearchIcon className="search-bar__icon" aria-hidden="true" />
+        {input && (
+          <button
+            className="search-bar__clear-button"
+            onClick={handleClearInput}
+            aria-label="Limpiar búsqueda"
+          >
+            <ClearIcon
+              className="search-bar__icon search-bar__icon--clear"
+              aria-hidden="true"
+            />
+          </button>
+        )}
       </div>
     </div>
   );
