@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../Spinner/Spinner.js";
+import { ReactComponent as CloseIcon } from "../../assets/x-icon.svg";
 import "./Modal.scss";
 
 const Modal = ({ isOpen, onClose, item }) => {
@@ -24,7 +25,7 @@ const Modal = ({ isOpen, onClose, item }) => {
     <div className="modal">
       <div className="modal__wrapper">
         <button className="modal__close" onClick={onClose}>
-          &times;
+          <CloseIcon className="modal__close-icon" />
         </button>
         <div className="modal__image-wrapper">
           {!imageLoaded && <Spinner />}

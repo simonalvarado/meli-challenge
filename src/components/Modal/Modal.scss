@@ -32,9 +32,12 @@
     border: none;
     cursor: pointer;
     z-index: 1;
-    font-size: 2rem;
-  }
 
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 
   &__image {
     &-wrapper {
