@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Meli Frontend Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React-based web application showcases a dynamic item listing and filtering system for a specific category of products. The app is designed with performance optimization in mind, implementing pagination to load items in segments of 10. As users scroll through the page, additional segments are loaded seamlessly, providing a smooth browsing experience.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To run this project locally on your machine, follow these steps:
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (v14.0 or later recommended)
+- npm (v6.0 or later recommended)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(Download and install Node.js and npm from [nodejs.org](https://nodejs.org/en/download/))
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+```bash
+git clone https://github.com/simonalvarado/meli-challenge.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd meli-challenge
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the project dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Start the backend server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+node server.js
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Start the frontend development server:
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Open your browser and navigate to `http://localhost:3000` to access the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Testing
 
-### Code Splitting
+This project uses Jest for testing. To run the tests, use the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm test
+```
 
-### Analyzing the Bundle Size
+## Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The project is structured as follows:
 
-### Making a Progressive Web App
+### Header
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The header contains the logo and a search bar. The search bar allows users to search for items by name.
 
-### Advanced Configuration
+![Header](./public/example_images/header-example.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Items List
 
-### Deployment
+The items list is a list of items that are displayed in a grid format. The items are loaded from the backend server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Items List](./public/example_images/items-list-example.png)
 
-### `npm run build` fails to minify
+### Item Detail Modal
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The item detail modal is a modal that displays the details of an item. The modal is displayed when the user clicks on the "Ver Detalle" button in the items list.
+
+![Item Detail Modal](./public/example_images/item-detail-modal-example.png)
+
+## Built With
+
+- React
+- Node.js
+- Jest
+
+## Author
+
+- [Simón Alvarado](https://simonalvarado.com/)
+- For any questions or comments, please contact me at my email: simonjesusalvarado@gmail.com
