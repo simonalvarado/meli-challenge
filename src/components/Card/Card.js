@@ -10,7 +10,11 @@ const Card = forwardRef(({ item }, ref) => {
         </div>
         <div className="card__content">
           <h2 className="card__title">{item.title}</h2>
+          <p className="card__description">{item.description}</p>
           <p className="card__price">{item.detail.price}</p>
+          <div className="card__button-wrapper">
+            <button className="card__button">Ver detalles</button>
+          </div>
         </div>
       </div>
     </li>
