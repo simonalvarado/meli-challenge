@@ -64,15 +64,20 @@ const ItemList = () => {
 
   return (
     <div className="item-list">
-      <ul>
-        {items.map((item, index) => (
-          <Card
-            key={item.id}
-            item={item}
-            ref={index === items.length - 1 ? lastItemRef : null}
-          />
-        ))}
-      </ul>
+      <div className="item-list__header">
+        <h1 className="item-list__title">Teléfonos y celulares</h1>
+      </div>
+      <div className="item-list__container">
+        <ul>
+          {items.map((item, index) => (
+            <Card
+              key={item.id}
+              item={item}
+              ref={index === items.length - 1 ? lastItemRef : null}
+            />
+          ))}
+        </ul>
+      </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
     </div>
