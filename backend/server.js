@@ -2,11 +2,16 @@ import express from "express";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 6001;
 
-const file = "./db.json";
+const file = path.join(__dirname, "db.json");
 
 const defaultData = { items: [] };
 
@@ -56,5 +61,5 @@ app.post("/api/items", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });

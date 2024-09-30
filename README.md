@@ -2,6 +2,8 @@
 
 This React-based web application showcases a dynamic item listing and filtering system for a specific category of products. The app is designed with performance optimization in mind, implementing pagination to load items in segments of 10. As users scroll through the page, additional segments are loaded seamlessly, providing a smooth browsing experience.
 
+The application is fully responsive, scaling seamlessly from desktop to mobile devices. The smallest mobile device considered in the design is the iPhone SE, ensuring a good user experience across a wide range of screen sizes.
+
 ## Getting Started
 
 To run this project locally on your machine, follow these steps:
@@ -38,7 +40,7 @@ npm install
 1. Start the backend server:
 
 ```bash
-node server.js
+npm run server
 ```
 
 2. Start the frontend development server:
