@@ -1,10 +1,8 @@
 import React, { forwardRef, useState } from "react";
 import Button from "../Button/Button.js";
-import Modal from "../Modal/Modal.js";
 import "./Card.scss";
 
-const Card = forwardRef(({ item }, ref) => {
-  const [showModal, setShowModal] = useState(false);
+const Card = forwardRef(({ item, onViewDetails }, ref) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
@@ -27,8 +25,9 @@ const Card = forwardRef(({ item }, ref) => {
             <p className="card__price">{item.detail.price}</p>
             <div className="card__button-wrapper">
               <Button
-                onClick={() => setShowModal(true)}
+                onClick={() => onViewDetails(item)}
                 className="card__button"
+                ariaLabel={`Ver detalles, ${item.title}`}
               >
                 Ver detalles
               </Button>
@@ -36,11 +35,6 @@ const Card = forwardRef(({ item }, ref) => {
           </div>
         </div>
       </li>
-      <Modal
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        item={item}
-      />
     </>
   );
 });

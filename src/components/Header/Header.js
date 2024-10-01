@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar.js";
-import logo from "../../assets/mercado-libre.png";
+import logo from "../../assets/mercado-libre.webp";
 import "./Header.scss";
 
 const Header = ({ onSearch }) => {

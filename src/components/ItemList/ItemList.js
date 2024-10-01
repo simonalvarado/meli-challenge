@@ -3,6 +3,7 @@ import { fetchItems } from "../../services/dataService.js";
 import { SearchContext } from "../../context/SearchContext.js";
 import Card from "../Card/Card.js";
 import Spinner from "../Spinner/Spinner.js";
+import Modal from "../Modal/Modal.js";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver.js";
 import "./ItemList.scss";
 
@@ -12,14 +13,14 @@ const ItemList = () => {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const { searchQuery } = useContext(SearchContext);
 
   const loadItems = useCallback(
     async (currentPage, resetItems = false) => {
-      if (isLoading) return;
       setIsLoading(true);
       setError(null);
 
@@ -49,6 +50,14 @@ const ItemList = () => {
 
   const lastItemRef = useIntersectionObserver(isLoading, hasMore, loadMore);
 
+  const handleViewDetails = useCallback((item) => {
+    setSelectedItem(item);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setSelectedItem(null);
+  }, []);
+
   useEffect(() => {
     setPage(1);
     setItems([]);
@@ -76,6 +85,7 @@ const ItemList = () => {
                 key={item.id}
                 item={item}
                 ref={index === items.length - 1 ? lastItemRef : null}
+                onViewDetails={handleViewDetails}
               />
             ))}
           </ul>
@@ -86,6 +96,13 @@ const ItemList = () => {
           </p>
         )}
       </div>
+      {selectedItem && (
+        <Modal
+          isOpen={!!selectedItem}
+          onClose={handleCloseModal}
+          item={selectedItem}
+        />
+      )}
     </div>
   );
 };

@@ -22,25 +22,38 @@ const SearchBar = () => {
 
   const handleClearInput = () => {
     setInput("");
+    handleSearch("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Previene el envío del formulario
   };
 
   return (
     <div className="search-bar">
-      <div className="search-bar__container">
+      <form
+        onSubmit={handleSubmit}
+        className="search-bar__container"
+        role="search"
+      >
+        <label htmlFor="search-input" className="visually-hidden">
+          Buscar producto
+        </label>
         <SearchIcon
           className="search-bar__icon search-bar__icon--search"
           aria-hidden="true"
         />
         <input
+          id="search-input"
           className="search-bar__input"
-          type="text"
+          type="search"
           placeholder="Buscar producto"
           value={input}
           onChange={handleInputChange}
-          aria-label="Buscar producto"
         />
         {input && (
           <button
+            type="button"
             className="search-bar__clear-button"
             onClick={handleClearInput}
             aria-label="Limpiar búsqueda"
@@ -51,7 +64,7 @@ const SearchBar = () => {
             />
           </button>
         )}
-      </div>
+      </form>
     </div>
   );
 };
